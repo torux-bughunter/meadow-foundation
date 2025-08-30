@@ -1,0 +1,72 @@
+backend:
+  name: github
+  repo: your-username/your-repo-name
+  branch: main
+  base_url: https://your-domain.com
+
+local_backend: true
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Slug", name: "slug", widget: "string", required: true }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Content", name: "body", widget: "markdown", required: true }
+      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Author", name: "author", widget: "string", required: true }
+      - { label: "Status", name: "status", widget: "select", options: ["draft", "published"], default: "draft", required: true }
+      - { label: "Publish Date", name: "date", widget: "datetime", required: false }
+      - { label: "Reading Time", name: "reading_time", widget: "number", required: false }
+
+  - name: "initiatives"
+    label: "Initiatives"
+    folder: "content/initiatives"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Slug", name: "slug", widget: "string", required: true }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Content", name: "body", widget: "markdown", required: true }
+      - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+      - { label: "Gallery", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Video URL", name: "video_url", widget: "string", required: false }
+
+  - name: "team"
+    label: "Team Members"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string", required: true }
+      - { label: "Slug", name: "slug", widget: "string", required: true }
+      - { label: "Role", name: "role", widget: "string", required: true }
+      - { label: "Bio", name: "bio", widget: "text", required: false }
+      - { label: "Headshot", name: "headshot", widget: "image", required: false }
+      - { label: "LinkedIn", name: "linkedin_url", widget: "string", required: false }
+      - { label: "Order", name: "order", widget: "number", default: 0, required: false }
+
+  - name: "impact"
+    label: "Impact Metrics"
+    folder: "content/impact"
+    create: true
+    slug: "{{key}}"
+    fields:
+      - { label: "Key", name: "key", widget: "string", required: true }
+      - { label: "Label", name: "label", widget: "string", required: true }
+      - { label: "Value", name: "value", widget: "number", required: true }
+      - { label: "Target", name: "target", widget: "number", required: false }
+      - { label: "Unit", name: "unit", widget: "string", required: false }
+      - { label: "Source Type", name: "source_type", widget: "string", required: false }
+      - { label: "Source Link", name: "source_link", widget: "string", required: false }
+      - { label: "Last Updated", name: "updated_at", widget: "datetime", required: false }
