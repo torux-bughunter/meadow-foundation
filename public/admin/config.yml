@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: torux-bughunter/meadow-foundation
+  name: git-gateway
   branch: main
 
 media_folder: "public/images"
