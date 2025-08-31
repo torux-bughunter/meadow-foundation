@@ -14,6 +14,7 @@ const navigationItems = [
   { name: "Resources", href: "/resources" },
   { name: "Impact", href: "/impact" },
   { name: "Contact", href: "/contact" },
+  { name: "Colors", href: "/color-demo" },
 ]
 
 export function Navigation() {

@@ -4,76 +4,76 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* COLOR SCHEME OPTION 1: Dark brown primary, light brown secondary, medium brown accent */
-  --background: oklch(0.98 0.02 85); /* Light beige background from logo */
-  --foreground: oklch(0.25 0.08 45); /* Dark brown from logo figure and MEADOW text */
-  --card: oklch(1 0 0); /* Pure white for cards */
-  --card-foreground: oklch(0.25 0.08 45);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.08 45);
-  --primary: oklch(0.25 0.08 45); /* Dark brown from logo figure and MEADOW text */
-  --primary-foreground: oklch(0.98 0.02 85);
-  --secondary: oklch(0.65 0.04 45); /* Light brown from logo dots */
-  --secondary-foreground: oklch(0.25 0.08 45);
-  --muted: oklch(0.95 0.02 85); /* Very light beige */
-  --muted-foreground: oklch(0.35 0.05 45); /* Medium-dark brown */
-  --accent: oklch(0.45 0.06 45); /* Medium brown from FOUNDATION text */
-  --accent-foreground: oklch(0.98 0.02 85);
-  --destructive: oklch(0.55 0.22 15); /* Warning red */
-  --destructive-foreground: oklch(0.98 0.02 85);
-  --border: oklch(0.88 0.02 85); /* Light beige border */
-  --input: oklch(1 0 0);
-  --ring: oklch(0.25 0.08 45 / 0.5); /* Primary with opacity */
-  --chart-1: oklch(0.25 0.08 45); /* Dark brown */
-  --chart-2: oklch(0.65 0.04 45); /* Light brown */
-  --chart-3: oklch(0.45 0.06 45); /* Medium brown */
-  --chart-4: oklch(0.85 0.02 85); /* Very light beige */
-  --chart-5: oklch(0.15 0.1 45); /* Darker brown */
+  /* NEW COLOR SCHEME: Professional healthcare palette with improved accessibility */
+  --background: #F8F6F1; /* Cream - clean, medical-grade, easy on the eyes */
+  --foreground: #2C3E50; /* Charcoal - professional, authoritative, highly readable */
+  --card: #FFFFFF; /* Pure white for cards and content areas */
+  --card-foreground: #2C3E50;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C3E50;
+  --primary: #4A7C59; /* Sage Green - trustworthy, healing, professional healthcare */
+  --primary-foreground: #FFFFFF;
+  --secondary: #5B8A8A; /* Warm Teal - calming, accessible, modern medical feel */
+  --secondary-foreground: #FFFFFF;
+  --muted: #F5F5F0; /* Very light cream for subtle backgrounds */
+  --muted-foreground: #4A5568; /* Medium gray for secondary text */
+  --accent: #D4A574; /* Soft Coral - warm, approachable, draws attention */
+  --accent-foreground: #2C3E50;
+  --destructive: #E53E3E; /* Improved warning red with better contrast */
+  --destructive-foreground: #FFFFFF;
+  --border: #E2E8F0; /* Light gray border for subtle separation */
+  --input: #FFFFFF;
+  --ring: #4A7C59 / 0.5; /* Primary with opacity for focus states */
+  --chart-1: #4A7C59; /* Sage Green */
+  --chart-2: #5B8A8A; /* Warm Teal */
+  --chart-3: #D4A574; /* Soft Coral */
+  --chart-4: #F8F6F1; /* Cream */
+  --chart-5: #2C3E50; /* Charcoal */
   --radius: 0.5rem;
-  --sidebar: oklch(0.98 0.02 85);
-  --sidebar-foreground: oklch(0.25 0.08 45);
-  --sidebar-primary: oklch(0.25 0.08 45);
-  --sidebar-primary-foreground: oklch(0.98 0.02 85);
-  --sidebar-accent: oklch(0.65 0.04 45);
-  --sidebar-accent-foreground: oklch(0.25 0.08 45);
-  --sidebar-border: oklch(0.88 0.02 85);
-  --sidebar-ring: oklch(0.25 0.08 45 / 0.5);
+  --sidebar: #F8F6F1;
+  --sidebar-foreground: #2C3E50;
+  --sidebar-primary: #4A7C59;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #5B8A8A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #4A7C59 / 0.5;
 }
 
 .dark {
-  /* Dark mode tokens for Meadow Foundation logo color scheme */
-  --background: oklch(0.08 0.02 45); /* Very dark brown */
-  --foreground: oklch(0.95 0.02 85); /* Very light beige */
-  --card: oklch(0.12 0.02 45); /* Dark brown */
-  --card-foreground: oklch(0.95 0.02 85);
-  --popover: oklch(0.08 0.02 45);
-  --popover-foreground: oklch(0.95 0.02 85);
-  --primary: oklch(0.35 0.06 45); /* Lighter brown for dark mode */
-  --primary-foreground: oklch(0.08 0.02 45);
-  --secondary: oklch(0.25 0.04 45); /* Medium brown */
-  --secondary-foreground: oklch(0.95 0.02 85);
-  --muted: oklch(0.15 0.02 45); /* Dark brown */
-  --muted-foreground: oklch(0.75 0.02 85); /* Light beige */
-  --accent: oklch(0.55 0.04 45); /* Medium-light brown */
-  --accent-foreground: oklch(0.08 0.02 45);
-  --destructive: oklch(0.65 0.22 15);
-  --destructive-foreground: oklch(0.95 0.02 85);
-  --border: oklch(0.2 0.02 45); /* Dark brown */
-  --input: oklch(0.15 0.02 45);
-  --ring: oklch(0.35 0.06 45 / 0.5);
-  --chart-1: oklch(0.35 0.06 45);
-  --chart-2: oklch(0.55 0.04 45);
-  --chart-3: oklch(0.75 0.02 85);
-  --chart-4: oklch(0.95 0.02 85);
-  --chart-5: oklch(0.25 0.08 45);
-  --sidebar: oklch(0.12 0.02 45);
-  --sidebar-foreground: oklch(0.95 0.02 85);
-  --sidebar-primary: oklch(0.35 0.06 45);
-  --sidebar-primary-foreground: oklch(0.08 0.02 45);
-  --sidebar-accent: oklch(0.25 0.04 45);
-  --sidebar-accent-foreground: oklch(0.95 0.02 85);
-  --sidebar-border: oklch(0.2 0.02 45);
-  --sidebar-ring: oklch(0.35 0.06 45 / 0.5);
+  /* Dark mode tokens for improved accessibility and contrast */
+  --background: #1A202C; /* Dark charcoal background */
+  --foreground: #F8F6F1; /* Cream text for excellent contrast */
+  --card: #2D3748; /* Darker charcoal for cards */
+  --card-foreground: #F8F6F1;
+  --popover: #1A202C;
+  --popover-foreground: #F8F6F1;
+  --primary: #68D391; /* Lighter sage green for dark mode */
+  --primary-foreground: #1A202C;
+  --secondary: #81E6D9; /* Lighter warm teal */
+  --secondary-foreground: #1A202C;
+  --muted: #2D3748; /* Dark charcoal */
+  --muted-foreground: #CBD5E0; /* Light gray */
+  --accent: #F6AD55; /* Lighter soft coral */
+  --accent-foreground: #1A202C;
+  --destructive: #FC8181; /* Lighter destructive red */
+  --destructive-foreground: #1A202C;
+  --border: #4A5568; /* Medium gray border */
+  --input: #2D3748;
+  --ring: #68D391 / 0.5;
+  --chart-1: #68D391;
+  --chart-2: #81E6D9;
+  --chart-3: #F6AD55;
+  --chart-4: #F8F6F1;
+  --chart-5: #4A7C59;
+  --sidebar: #2D3748;
+  --sidebar-foreground: #F8F6F1;
+  --sidebar-primary: #68D391;
+  --sidebar-primary-foreground: #1A202C;
+  --sidebar-accent: #81E6D9;
+  --sidebar-accent-foreground: #1A202C;
+  --sidebar-border: #4A5568;
+  --sidebar-ring: #68D391 / 0.5;
 }
 
 @theme inline {
@@ -138,14 +138,87 @@
     @apply font-serif font-bold;
   }
 
+  /* Updated gradient with new color scheme */
   .meadow-gradient {
-    background: linear-gradient(135deg, oklch(0.25 0.08 45), oklch(0.65 0.04 45));
+    background: linear-gradient(135deg, #4A7C59, #5B8A8A);
   }
 
   .meadow-text-gradient {
-    background: linear-gradient(135deg, oklch(0.25 0.08 45), oklch(0.65 0.04 45));
+    background: linear-gradient(135deg, #4A7C59, #5B8A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* New utility classes for the improved color scheme */
+  .bg-sage {
+    background-color: #4A7C59;
+  }
+  
+  .bg-teal {
+    background-color: #5B8A8A;
+  }
+  
+  .bg-coral {
+    background-color: #D4A574;
+  }
+  
+  .bg-cream {
+    background-color: #F8F6F1;
+  }
+  
+  .text-sage {
+    color: #4A7C59;
+  }
+  
+  .text-teal {
+    color: #5B8A8A;
+  }
+  
+  .text-coral {
+    color: #D4A574;
+  }
+  
+  .text-charcoal {
+    color: #2C3E50;
+  }
+}
+
+/* Blog content styling */
+.blog-content {
+  line-height: 1.6;
+  font-size: 1.125rem;
+}
+
+.blog-content p {
+  margin-bottom: 1rem;
+}
+
+.blog-content ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  list-style-type: decimal;
+  counter-reset: item;
+}
+
+.blog-content ol > li {
+  margin-bottom: 0.5rem;
+  display: list-item;
+  list-style-position: outside;
+  list-style: decimal;
+}
+
+.blog-content ol > li::marker {
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  display: list-item;
+  list-style-position: outside;
+}
+
+.blog-content strong {
+  font-weight: 600;
 }

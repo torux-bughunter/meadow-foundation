@@ -13,12 +13,12 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 to-accent/5 py-20 lg:py-32">
+      <section className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge variant="secondary" className="w-fit">
+                <Badge variant="secondary" className="w-fit bg-secondary/20 text-secondary-foreground border-secondary/30">
                   Meadow Foundation - Empowering Communities
                 </Badge>
                 <h1 className="text-4xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
@@ -31,13 +31,13 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="text-lg px-8">
+                <Button asChild size="lg" className="text-lg px-8 bg-primary hover:bg-primary/90">
                   <Link href="/donate">
                     Donate Now
                     <Heart className="ml-2 w-5 h-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-lg px-8 bg-transparent">
+                <Button asChild variant="outline" size="lg" className="text-lg px-8 bg-transparent border-secondary/30 hover:bg-secondary/10 hover:border-secondary/50">
                   <Link href="/initiatives">
                     Read Stories
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -47,7 +47,7 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-accent p-1">
+              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-secondary p-1">
                 <div className="w-full h-full bg-background rounded-xl flex items-center justify-center">
                   <Image
                     src="/placeholder-8eef2.png"
@@ -72,11 +72,11 @@ export default function HomePage() {
               <div className="text-muted-foreground">Lives Transformed</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-4xl font-serif font-bold text-primary">$250,000</div>
+              <div className="text-4xl font-serif font-bold text-secondary">$250,000</div>
               <div className="text-muted-foreground">Community Investment</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-4xl font-serif font-bold text-primary">75+</div>
+              <div className="text-4xl font-serif font-bold text-accent">75+</div>
               <div className="text-muted-foreground">Healthcare Partners</div>
             </div>
           </div>
@@ -95,50 +95,55 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden border-border hover:border-primary/30 transition-all duration-200 hover:shadow-lg">
               <div className="aspect-video relative">
                 <Image
                   src="/community-physio-workshop.png"
-                  alt="Community physiotherapy workshop"
+                  alt="Community physiotherapy workshop in action"
                   fill
                   className="object-cover"
                 />
               </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif font-semibold text-lg mb-2">Community Workshops</h3>
-                <p className="text-muted-foreground">
-                  Free educational sessions teaching injury prevention and basic physiotherapy techniques.
-                </p>
-              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-foreground">Community Workshops</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Free physiotherapy education sessions for rural communities
+                </CardDescription>
+              </CardHeader>
             </Card>
 
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden border-border hover:border-secondary/30 transition-all duration-200 hover:shadow-lg">
               <div className="aspect-video relative">
-                <Image src="/mobile-physio-rural.png" alt="Mobile physiotherapy clinic" fill className="object-cover" />
+                <Image
+                  src="/mobile-clinic-community.png"
+                  alt="Mobile physiotherapy clinic serving rural areas"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif font-semibold text-lg mb-2">Mobile Clinics</h3>
-                <p className="text-muted-foreground">
-                  Bringing professional physiotherapy services directly to underserved communities.
-                </p>
-              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-foreground">Mobile Clinics</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Bringing physiotherapy care directly to underserved areas
+                </CardDescription>
+              </CardHeader>
             </Card>
 
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden border-border hover:border-accent/30 transition-all duration-200 hover:shadow-lg">
               <div className="aspect-video relative">
                 <Image
                   src="/physiotherapy-student-training.png"
-                  alt="Student training program"
+                  alt="Students learning physiotherapy techniques"
                   fill
                   className="object-cover"
                 />
               </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif font-semibold text-lg mb-2">Training Programs</h3>
-                <p className="text-muted-foreground">
-                  Developing the next generation of physiotherapy professionals and advocates.
-                </p>
-              </CardContent>
+              <CardHeader>
+                <CardTitle className="text-foreground">Student Training</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Supporting the next generation of physiotherapy professionals
+                </CardDescription>
+              </CardHeader>
             </Card>
           </div>
         </div>
@@ -329,29 +334,25 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <h2 className="text-3xl lg:text-4xl font-serif font-bold">Join the Meadow Foundation Movement</h2>
-          <p className="text-xl opacity-90">
-            Become part of our growing community of healthcare advocates, dedicated volunteers, and passionate
-            supporters working to make quality physiotherapy accessible to every community.
+      <section className="py-20 bg-gradient-to-r from-primary/5 to-accent/5">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-serif font-bold text-foreground mb-6">
+            Join Us in Making a Difference
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Your support helps us reach more communities and transform more lives through physiotherapy care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-              <Link href="/contact">
-                Volunteer With Us
-                <Users className="ml-2 w-5 h-5" />
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Link href="/donate">
+                Make a Donation
+                <Heart className="ml-2 w-5 h-5" />
               </Link>
             </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-            >
-              <Link href="/donate">
-                Support Our Mission
-                <Heart className="ml-2 w-5 h-5" />
+            <Button asChild variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10 hover:border-primary/50">
+              <Link href="/contact">
+                Get Involved
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
           </div>

@@ -7,347 +7,154 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Search, Calendar, Clock, Filter } from "lucide-react"
+import { Search, Calendar, Clock, Filter, ArrowRight, User, Tag } from "lucide-react"
+import { apostropheClient } from '@/lib/apostrophe-client'
 
-// Mock blog data - in real app this would come from CMS
-const blogPosts = [
-  {
-    id: 1,
-    title: "Understanding Lower Back Pain: A Comprehensive Guide",
-    slug: "understanding-lower-back-pain-guide",
-    excerpt:
-      "Learn about the common causes of lower back pain and evidence-based treatment approaches that can help you recover faster.",
-    coverImage: "/blog-back-pain.png",
-    author: {
-      name: "Dr. Sarah Chen",
-      avatar: "/placeholder-user.jpg",
-      role: "Lead Physiotherapist",
-    },
-    publishDate: "2024-01-15",
-    readingTime: "8 min read",
-    tags: ["Pain Management", "Rehabilitation", "Education"],
-    category: "rehabilitation",
-  },
-  {
-    id: 2,
-    title: "Community Outreach: Bringing Physiotherapy to Rural Areas",
-    slug: "community-outreach-rural-physiotherapy",
-    excerpt:
-      "Our mobile physiotherapy unit has reached over 500 patients in remote communities. Here's what we've learned.",
-    coverImage: "/rural-physiotherapy-outreach.png",
-    author: {
-      name: "James Wilson",
-      avatar: "/placeholder-user.jpg",
-      role: "Community Coordinator",
-    },
-    publishDate: "2024-01-10",
-    readingTime: "6 min read",
-    tags: ["Community", "Outreach", "Rural Health"],
-    category: "community-stories",
-  },
-  {
-    id: 3,
-    title: "Preventing Sports Injuries: Essential Tips for Athletes",
-    slug: "preventing-sports-injuries-athletes",
-    excerpt:
-      "Evidence-based strategies to help athletes stay injury-free and perform at their best throughout the season.",
-    coverImage: "/sports-injury-prevention.png",
-    author: {
-      name: "Maria Rodriguez",
-      avatar: "/placeholder-user.jpg",
-      role: "Sports Physiotherapist",
-    },
-    publishDate: "2024-01-05",
-    readingTime: "10 min read",
-    tags: ["Prevention", "Sports", "Athletes"],
-    category: "prevention",
-  },
-  {
-    id: 4,
-    title: "Patient Success Story: Recovery After Stroke",
-    slug: "patient-success-story-stroke-recovery",
-    excerpt:
-      "Meet John, who regained mobility and independence through our comprehensive stroke rehabilitation program.",
-    coverImage: "/stroke-recovery-story.png",
-    author: {
-      name: "Dr. Emily Thompson",
-      avatar: "/placeholder-user.jpg",
-      role: "Neurological Physiotherapist",
-    },
-    publishDate: "2023-12-28",
-    readingTime: "7 min read",
-    tags: ["Success Story", "Stroke", "Recovery"],
-    category: "community-stories",
-  },
-  {
-    id: 5,
-    title: "The Science Behind Manual Therapy Techniques",
-    slug: "science-behind-manual-therapy",
-    excerpt:
-      "Exploring the latest research on manual therapy and its effectiveness in treating musculoskeletal conditions.",
-    coverImage: "/manual-therapy-science.png",
-    author: {
-      name: "Dr. Sarah Chen",
-      avatar: "/placeholder-user.jpg",
-      role: "Lead Physiotherapist",
-    },
-    publishDate: "2023-12-20",
-    readingTime: "12 min read",
-    tags: ["Research", "Manual Therapy", "Evidence-Based"],
-    category: "rehabilitation",
-  },
-  {
-    id: 6,
-    title: "Building Stronger Communities Through Health Education",
-    slug: "building-communities-health-education",
-    excerpt:
-      "How our educational workshops are empowering communities to take charge of their health and prevent injuries.",
-    coverImage: "/community-health-education.png",
-    author: {
-      name: "James Wilson",
-      avatar: "/placeholder-user.jpg",
-      role: "Community Coordinator",
-    },
-    publishDate: "2023-12-15",
-    readingTime: "5 min read",
-    tags: ["Education", "Community", "Prevention"],
-    category: "prevention",
-  },
-]
-
-const categories = [
-  { value: "all", label: "All Categories" },
-  { value: "rehabilitation", label: "Rehabilitation" },
-  { value: "prevention", label: "Prevention" },
-  { value: "community-stories", label: "Community Stories" },
-]
-
-function BlogFilters() {
-  return (
-    <div className="bg-card border border-border rounded-lg p-6 mb-8">
-      <div className="flex items-center gap-2 mb-4">
-        <Filter className="w-5 h-5 text-primary" />
-        <h2 className="font-semibold text-lg">Filter Posts</h2>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-muted-foreground">Search</label>
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <Input placeholder="Search articles..." className="pl-10" />
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-muted-foreground">Category</label>
-          <Select defaultValue="all">
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {categories.map((category) => (
-                <SelectItem key={category.value} value={category.value}>
-                  {category.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-muted-foreground">Sort By</label>
-          <Select defaultValue="newest">
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="newest">Newest First</SelectItem>
-              <SelectItem value="oldest">Oldest First</SelectItem>
-              <SelectItem value="popular">Most Popular</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
-    </div>
-  )
+interface BlogPost {
+  _id: string
+  title: string
+  slug: string
+  excerpt?: string
+  content?: string
+  author?: string
+  category?: string
+  featuredImage?: {
+    _urls?: {
+      full: string
+      max: string
+      original: string
+    }
+    title?: string
+  }
+  publishedAt?: string
+  status?: string
 }
 
-function BlogCard({ post }: { post: (typeof blogPosts)[0] }) {
+export default async function BlogPage() {
+  const posts: BlogPost[] = await apostropheClient.getBlogPosts()
+
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-border">
-      <div className="relative overflow-hidden rounded-t-lg">
-        <Image
-          src={post.coverImage || "/placeholder.svg"}
-          alt={post.title}
-          width={400}
-          height={240}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div className="absolute top-4 left-4">
-          <Badge variant="secondary" className="bg-background/90 text-foreground">
-            {post.tags[0]}
-          </Badge>
-        </div>
-      </div>
-
-      <CardHeader className="pb-3">
-        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
-          <div className="flex items-center gap-1">
-            <Calendar className="w-4 h-4" />
-            {new Date(post.publishDate).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </div>
-          <div className="flex items-center gap-1">
-            <Clock className="w-4 h-4" />
-            {post.readingTime}
-          </div>
-        </div>
-
-        <h3 className="font-serif font-semibold text-xl leading-tight group-hover:text-primary transition-colors">
-          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-        </h3>
-      </CardHeader>
-
-      <CardContent className="pt-0">
-        <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
-
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Image
-              src={post.author.avatar || "/placeholder.svg"}
-              alt={post.author.name}
-              width={32}
-              height={32}
-              className="w-8 h-8 rounded-full"
-            />
-            <div>
-              <p className="font-medium text-sm">{post.author.name}</p>
-              <p className="text-xs text-muted-foreground">{post.author.role}</p>
-            </div>
-          </div>
-
-          <Button variant="ghost" size="sm" asChild>
-            <Link href={`/blog/${post.slug}`}>Read More</Link>
-          </Button>
-        </div>
-
-        <div className="flex flex-wrap gap-2 mt-4">
-          {post.tags.slice(1).map((tag) => (
-            <Badge key={tag} variant="outline" className="text-xs">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
-  )
-}
-
-export default function BlogPage() {
-  return (
-    <div className="min-h-screen bg-background">
+    <>
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/5 to-background py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">Knowledge & Stories</h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Evidence-based insights, community stories, and expert guidance to help you understand physiotherapy and
-              improve your health.
+      <div className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <section className="relative py-20 bg-gradient-to-br from-primary/10 via-secondary/5 to-primary/5">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Physiotherapy Insights
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Expert knowledge, patient stories, and the latest developments in physiotherapy care and community health.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Main Content */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <BlogFilters />
-
-          {/* Featured Post */}
-          <div className="mb-12">
-            <h2 className="font-serif text-2xl font-semibold mb-6">Featured Article</h2>
-            <Card className="overflow-hidden border-border">
-              <div className="md:flex">
-                <div className="md:w-1/2">
-                  <Image
-                    src={blogPosts[0].coverImage || "/placeholder.svg"}
-                    alt={blogPosts[0].title}
-                    width={600}
-                    height={400}
-                    className="w-full h-64 md:h-full object-cover"
-                  />
+        {/* Blog Posts Grid */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            {posts.length === 0 ? (
+              <div className="text-center py-20">
+                <div className="w-24 h-24 mx-auto mb-6 bg-muted rounded-full flex items-center justify-center">
+                  <svg className="w-12 h-12 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                  </svg>
                 </div>
-                <div className="md:w-1/2 p-8">
-                  <Badge className="mb-4">{blogPosts[0].tags[0]}</Badge>
-                  <h3 className="font-serif text-2xl font-semibold mb-4">
-                    <Link href={`/blog/${blogPosts[0].slug}`} className="hover:text-primary transition-colors">
-                      {blogPosts[0].title}
-                    </Link>
-                  </h3>
-                  <p className="text-muted-foreground mb-6">{blogPosts[0].excerpt}</p>
-
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {new Date(blogPosts[0].publishDate).toLocaleDateString()}
+                <h3 className="text-2xl font-semibold mb-4">No blog posts yet</h3>
+                <p className="text-muted-foreground max-w-md mx-auto">
+                  Content will appear here once you create blog posts in the CMS. Start writing to share your insights!
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {posts.map((post: BlogPost) => (
+                  <article key={post._id} className="group bg-card rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-border/50 hover:border-primary/20 hover:-translate-y-1">
+                    {/* Image Container */}
+                    <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-muted to-muted/50">
+                      {post.featuredImage?._urls?.full ? (
+                        <Image
+                          src={`http://localhost:3001${post.featuredImage._urls.full}`}
+                          alt={post.featuredImage.title || post.title}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        // Placeholder image since featuredImage is not available in public API
+                        <div className="w-full h-full flex items-center justify-center">
+                          <svg className="w-16 h-16 text-muted-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                      )}
+                      {/* Category Badge */}
+                      {post.category && (
+                        <div className="absolute top-4 left-4">
+                          <span className="px-3 py-1.5 bg-primary/90 text-primary-foreground rounded-full text-xs font-medium shadow-lg backdrop-blur-sm">
+                            {post.category}
+                          </span>
+                        </div>
+                      )}
+                      {/* Date Badge */}
+                      {post.publishedAt && (
+                        <div className="absolute top-4 right-4">
+                          <span className="px-3 py-1.5 bg-background/90 text-foreground rounded-full text-xs font-medium shadow-lg backdrop-blur-sm flex items-center gap-1">
+                            <Calendar className="w-3 h-3" />
+                            {new Date(post.publishedAt).toLocaleDateString('en-US', { 
+                              month: 'short', 
+                              day: 'numeric',
+                              year: 'numeric'
+                            })}
+                          </span>
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {blogPosts[0].readingTime}
-                    </div>
-                  </div>
 
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <Image
-                        src={blogPosts[0].author.avatar || "/placeholder.svg"}
-                        alt={blogPosts[0].author.name}
-                        width={40}
-                        height={40}
-                        className="w-10 h-10 rounded-full"
-                      />
-                      <div>
-                        <p className="font-medium">{blogPosts[0].author.name}</p>
-                        <p className="text-sm text-muted-foreground">{blogPosts[0].author.role}</p>
+                    {/* Content */}
+                    <div className="p-6">
+                      {/* Title */}
+                      <h2 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-200 leading-tight">
+                        {post.title}
+                      </h2>
+                      
+                      {/* Excerpt - Show placeholder since excerpt is not available in public API */}
+                      <p className="text-muted-foreground mb-4 line-clamp-3 leading-relaxed text-sm">
+                        {post.excerpt || "Click to read this insightful article about physiotherapy and community health..."}
+                      </p>
+                      
+                      {/* Meta Information */}
+                      <div className="flex items-center justify-between mb-4">
+                        {post.author && (
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <User className="w-4 h-4" />
+                            <span>{post.author}</span>
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Read More Link */}
+                      <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium text-sm group/link transition-colors duration-200"
+                        >
+                          Read More
+                          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" />
+                        </Link>
+                        
+                        {/* Reading Time Estimate */}
+                        <span className="text-xs text-muted-foreground flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {post.content ? Math.ceil((post.content.length / 200)) : 3} min read
+                        </span>
                       </div>
                     </div>
-
-                    <Button asChild>
-                      <Link href={`/blog/${blogPosts[0].slug}`}>Read Article</Link>
-                    </Button>
-                  </div>
-                </div>
+                  </article>
+                ))}
               </div>
-            </Card>
+            )}
           </div>
-
-          {/* Blog Grid */}
-          <div className="mb-8">
-            <h2 className="font-serif text-2xl font-semibold mb-6">Latest Articles</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.slice(1).map((post) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
-            </div>
-          </div>
-
-          {/* Load More */}
-          <div className="text-center">
-            <Button variant="outline" size="lg">
-              Load More Articles
-            </Button>
-          </div>
-        </div>
-      </section>
-
+        </section>
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }
