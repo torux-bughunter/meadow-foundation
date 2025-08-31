@@ -240,7 +240,11 @@ export default function DonatePage() {
 
                   {/* Employer Match */}
                   <div className="flex items-start space-x-3">
-                    <Checkbox id="employer-match" checked={employerMatch} onCheckedChange={setEmployerMatch} />
+                    <Checkbox 
+                      id="employer-match" 
+                      checked={employerMatch} 
+                      onCheckedChange={(checked) => setEmployerMatch(checked === true)} 
+                    />
                     <div className="space-y-1">
                       <Label htmlFor="employer-match" className="text-sm font-medium cursor-pointer">
                         My employer offers matching gifts
@@ -373,13 +377,17 @@ export default function DonatePage() {
 
                   {/* Newsletter Opt-in */}
                   <div className="flex items-start space-x-3">
-                    <Checkbox id="newsletter" checked={newsletter} onCheckedChange={setNewsletter} />
+                    <Checkbox 
+                      id="newsletter" 
+                      checked={newsletter} 
+                      onCheckedChange={(checked) => setNewsletter(checked === true)} 
+                    />
                     <div className="space-y-1">
                       <Label htmlFor="newsletter" className="text-sm font-medium cursor-pointer">
                         Subscribe to our newsletter
                       </Label>
                       <p className="text-xs text-muted-foreground">
-                        Receive updates on our programs and impact stories. Unsubscribe anytime.
+                        Stay updated on our impact and upcoming initiatives.
                       </p>
                     </div>
                   </div>

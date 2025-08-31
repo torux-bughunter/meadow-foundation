@@ -1,72 +1,95 @@
 backend:
   name: github
-  repo: your-username/your-repo-name
+  repo: torux-bughunter/meadow-foundation
   branch: main
-  base_url: https://your-domain.com
 
-local_backend: true
 media_folder: "public/images"
 public_folder: "/images"
 
+# Enable editorial workflow for moderation
+publish_mode: editorial_workflow
+
 collections:
-  - name: "blog"
+  - name: "Blog Posts"
     label: "Blog Posts"
     folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Slug", name: "slug", widget: "string", required: true }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
-      - { label: "Content", name: "body", widget: "markdown", required: true }
-      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Author", name: "author", widget: "string", required: true }
-      - { label: "Status", name: "status", widget: "select", options: ["draft", "published"], default: "draft", required: true }
-      - { label: "Publish Date", name: "date", widget: "datetime", required: false }
-      - { label: "Reading Time", name: "reading_time", widget: "number", required: false }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string", required: false}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["Health & Wellness", "Physiotherapy", "Community", "Education", "Research", "Patient Stories"]}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false}
+      - {label: "Summary", name: "summary", widget: "text", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "SEO Title", name: "seo_title", widget: "string", required: false}
+      - {label: "SEO Description", name: "seo_description", widget: "text", required: false}
+      - {label: "SEO Keywords", name: "seo_keywords", widget: "list", required: false}
+      - {label: "Status", name: "status", widget: "select", options: ["draft", "submitted", "under-review", "approved", "published", "rejected"], default: "draft"}
+      - {label: "Submit Date", name: "submit_date", widget: "datetime", required: false}
+      - {label: "Review Date", name: "review_date", widget: "datetime", required: false}
+      - label: "Moderation"
+        name: "moderation"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Reviewer", name: "reviewer", widget: "string", required: false}
+          - {label: "Review Notes", name: "review_notes", widget: "text", required: false}
+          - {label: "Rejection Reason", name: "rejection_reason", widget: "text", required: false}
+          - {label: "Required Changes", name: "required_changes", widget: "text", required: false}
+          - {label: "Priority", name: "priority", widget: "select", options: ["low", "medium", "high", "urgent"], default: "medium", required: false}
+          - {label: "Content Rating", name: "content_rating", widget: "select", options: ["G", "PG", "PG-13", "R"], default: "G", required: false}
+          - {label: "Fact Checked", name: "fact_checked", widget: "boolean", default: false, required: false}
+          - {label: "Medical Review", name: "medical_review", widget: "boolean", default: false, required: false}
 
-  - name: "initiatives"
+  - name: "Initiatives"
     label: "Initiatives"
     folder: "content/initiatives"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Slug", name: "slug", widget: "string", required: true }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
-      - { label: "Content", name: "body", widget: "markdown", required: true }
-      - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
-      - { label: "Gallery", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
-      - { label: "Video URL", name: "video_url", widget: "string", required: false }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string", required: false}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Start Date", name: "start_date", widget: "datetime", required: false}
+      - {label: "End Date", name: "end_date", widget: "datetime", required: false}
+      - {label: "Status", name: "status", widget: "select", options: ["planning", "active", "completed", "on-hold"], default: "planning"}
+      - {label: "Impact Metrics", name: "impact_metrics", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "team"
+  - name: "Team Members"
     label: "Team Members"
     folder: "content/team"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Name", name: "name", widget: "string", required: true }
-      - { label: "Slug", name: "slug", widget: "string", required: true }
-      - { label: "Role", name: "role", widget: "string", required: true }
-      - { label: "Bio", name: "bio", widget: "text", required: false }
-      - { label: "Headshot", name: "headshot", widget: "image", required: false }
-      - { label: "LinkedIn", name: "linkedin_url", widget: "string", required: false }
-      - { label: "Order", name: "order", widget: "number", default: 0, required: false }
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string", required: false}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+      - {label: "Email", name: "email", widget: "string", required: false}
+      - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+      - {label: "Twitter", name: "twitter", widget: "string", required: false}
+      - {label: "Specializations", name: "specializations", widget: "list", required: false}
+      - {label: "Certifications", name: "certifications", widget: "list", required: false}
 
-  - name: "impact"
+  - name: "Impact Metrics"
     label: "Impact Metrics"
     folder: "content/impact"
     create: true
-    slug: "{{key}}"
+    slug: "{{slug}}"
     fields:
-      - { label: "Key", name: "key", widget: "string", required: true }
-      - { label: "Label", name: "label", widget: "string", required: true }
-      - { label: "Value", name: "value", widget: "number", required: true }
-      - { label: "Target", name: "target", widget: "number", required: false }
-      - { label: "Unit", name: "unit", widget: "string", required: false }
-      - { label: "Source Type", name: "source_type", widget: "string", required: false }
-      - { label: "Source Link", name: "source_link", widget: "string", required: false }
-      - { label: "Last Updated", name: "updated_at", widget: "datetime", required: false }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string", required: false}
+      - {label: "Value", name: "value", widget: "string"}
+      - {label: "Unit", name: "unit", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "select", options: ["Patients Served", "Communities Reached", "Education Programs", "Research Publications", "Partnerships"], default: "Patients Served"}
+      - {label: "Icon", name: "icon", widget: "string", required: false}
