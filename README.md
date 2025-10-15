@@ -1,4 +1,4 @@
-# Meadow Foundation - Physiotherapy Website
+# Medow Foundation - Physiotherapy Website
 
 A modern, accessible website to raise awareness about physiotherapy, publish volunteer-written blogs, and transparently show impact with verifiable artifacts.
 

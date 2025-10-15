@@ -481,7 +481,7 @@ export default function DonatePage() {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Tax Deductible</h3>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Meadow Foundation is a 501(c)(3) nonprofit organization. Your donation is tax-deductible to the
+                      Medow Foundation is a 501(c)(3) nonprofit organization. Your donation is tax-deductible to the
                       full extent allowed by law.
                     </p>
                     <p className="text-xs text-muted-foreground">

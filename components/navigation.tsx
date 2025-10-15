@@ -17,28 +17,13 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo/Brand */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">Meadow Foundation</span>
+            <span className="text-xl font-bold">Medow Foundation</span>
           </Link>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-sm font-medium hover:text-primary">
               Home
-            </Link>
-            <Link href="/about" className="text-sm font-medium hover:text-primary">
-              About
-            </Link>
-            <Link href="/initiatives" className="text-sm font-medium hover:text-primary">
-              Initiatives
-            </Link>
-            <Link href="/blog" className="text-sm font-medium hover:text-primary">
-              Blog
-            </Link>
-            <Link href="/impact" className="text-sm font-medium hover:text-primary">
-              Impact
-            </Link>
-            <Link href="/resources" className="text-sm font-medium hover:text-primary">
-              Resources
             </Link>
             <Link href="/contact" className="text-sm font-medium hover:text-primary">
               Contact
@@ -68,21 +53,6 @@ export function Navigation() {
             <DropdownMenuContent align="end" className="w-48">
               <DropdownMenuItem asChild>
                 <Link href="/">Home</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/about">About</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/initiatives">Initiatives</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/blog">Blog</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/impact">Impact</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/resources">Resources</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/contact">Contact</Link>

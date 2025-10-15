@@ -1,7 +1,7 @@
-# Meadow Foundation Color Palette
+# Medow Foundation Color Palette
 
 ## Overview
-This document outlines the professional healthcare color palette designed for the Meadow Foundation website, ensuring excellent accessibility, visual hierarchy, and brand consistency.
+This document outlines the professional healthcare color palette designed for the Medow Foundation website, ensuring excellent accessibility, visual hierarchy, and brand consistency.
 
 ## Primary Color Palette
 

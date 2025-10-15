@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Meadow Foundation - Physiotherapy Awareness & Community",
+  title: "Medow Foundation - Physiotherapy Awareness & Community",
   description:
     "Raising awareness about physiotherapy, sharing stories, and connecting communities with evidence-based care.",
   generator: "v0.app",

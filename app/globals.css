@@ -4,76 +4,108 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* NEW COLOR SCHEME: Professional healthcare palette with improved accessibility */
-  --background: #F8F6F1; /* Cream - clean, medical-grade, easy on the eyes */
-  --foreground: #2C3E50; /* Charcoal - professional, authoritative, highly readable */
+  /* NEW COLOR SCHEME: Diverse light brown and earthy palette with gentle tones */
+  --background: #FDFBF8; /* Lighter Off-White - even more gentle */
+  --foreground: #5D4A3A; /* Rich Coffee - warm and approachable */
   --card: #FFFFFF; /* Pure white for cards and content areas */
-  --card-foreground: #2C3E50;
+  --card-foreground: #5D4A3A;
   --popover: #FFFFFF;
-  --popover-foreground: #2C3E50;
-  --primary: #4A7C59; /* Sage Green - trustworthy, healing, professional healthcare */
+  --popover-foreground: #5D4A3A;
+  --primary: #5D4A3A; /* Rich Coffee - primary brand color */
   --primary-foreground: #FFFFFF;
-  --secondary: #5B8A8A; /* Warm Teal - calming, accessible, modern medical feel */
+  --secondary: #8B6B3F; /* Rich Saddle Brown - accessible accent */
   --secondary-foreground: #FFFFFF;
-  --muted: #F5F5F0; /* Very light cream for subtle backgrounds */
-  --muted-foreground: #4A5568; /* Medium gray for secondary text */
-  --accent: #D4A574; /* Soft Coral - warm, approachable, draws attention */
-  --accent-foreground: #2C3E50;
-  --destructive: #E53E3E; /* Improved warning red with better contrast */
+  --muted: #F5F0EB; /* Warm Off-White for subtle backgrounds */
+  --muted-foreground: #9A8B7A; /* Warm Taupe for secondary text */
+  --accent: #8B6B3F; /* Rich Saddle Brown - accessible accent */
+  --accent-foreground: #FFFFFF;
+  --destructive: #E53E3E; /* Warning red with good contrast */
   --destructive-foreground: #FFFFFF;
-  --border: #E2E8F0; /* Light gray border for subtle separation */
+  --border: #D4C4B0; /* Warm Sand for gentle borders */
   --input: #FFFFFF;
-  --ring: #4A7C59 / 0.5; /* Primary with opacity for focus states */
-  --chart-1: #4A7C59; /* Sage Green */
-  --chart-2: #5B8A8A; /* Warm Teal */
-  --chart-3: #D4A574; /* Soft Coral */
-  --chart-4: #F8F6F1; /* Cream */
-  --chart-5: #2C3E50; /* Charcoal */
+  --ring: #5D4A3A / 0.5; /* Primary with opacity for focus states */
+  --chart-1: #5D4A3A; /* Rich Coffee */
+  --chart-2: #8B6B3F; /* Rich Saddle Brown */
+  --chart-3: #A27145; /* Warm Amber (original accent) */
+  --chart-4: #F8F5F2; /* Off-White */
+  --chart-5: #9A8B7A; /* Warm Taupe */
   --radius: 0.5rem;
-  --sidebar: #F8F6F1;
-  --sidebar-foreground: #2C3E50;
-  --sidebar-primary: #4A7C59;
+  --sidebar: #F8F5F2;
+  --sidebar-foreground: #5D4A3A;
+  --sidebar-primary: #5D4A3A;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #5B8A8A;
+  --sidebar-accent: #8B6B3F;
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #E2E8F0;
-  --sidebar-ring: #4A7C59 / 0.5;
+  --sidebar-border: #D4C4B0;
+  --sidebar-ring: #5D4A3A / 0.5;
+  
+  /* Additional brand colors with more diversity */
+  --brand-bg: #E5D6C6; /* Pale Beige - from logo */
+  --accent-bg: #F5F0EB; /* Warm Off-White */
+  --accent-original: #A27145; /* Warm Amber - original accent */
+  --accent-light: #B88A5A; /* Golden Tan */
+  --neutral-light: #D4C4B0; /* Warm Sand */
+  --neutral-mid: #9A8B7A; /* Warm Taupe */
+  --earth-brown: #7A5C3A; /* Earth Brown - deeper brown */
+  --warm-ochre: #C19A6B; /* Warm Ochre - golden brown */
+  --soft-sienna: #B8860B; /* Soft Sienna - rich golden brown */
+  --muted-terracotta: #A0522D; /* Muted Terracotta - reddish brown */
+  --light-umber: #8B7355; /* Light Umber - medium brown */
+  --warm-beige: #F5E6D3; /* Warm Beige - very light warm tone */
+  --soft-khaki: #C3B091; /* Soft Khaki - muted green-brown */
+  --warm-cream: #FDF5E6; /* Warm Cream - lightest warm tone */
 }
 
 .dark {
   /* Dark mode tokens for improved accessibility and contrast */
   --background: #1A202C; /* Dark charcoal background */
-  --foreground: #F8F6F1; /* Cream text for excellent contrast */
+  --foreground: #F8F5F2; /* Off-White text for excellent contrast */
   --card: #2D3748; /* Darker charcoal for cards */
-  --card-foreground: #F8F6F1;
+  --card-foreground: #F8F5F2;
   --popover: #1A202C;
-  --popover-foreground: #F8F6F1;
-  --primary: #68D391; /* Lighter sage green for dark mode */
+  --popover-foreground: #F8F5F2;
+  --primary: #B88A5A; /* Lighter golden tan for dark mode */
   --primary-foreground: #1A202C;
-  --secondary: #81E6D9; /* Lighter warm teal */
+  --secondary: #A27145; /* Lighter warm amber */
   --secondary-foreground: #1A202C;
   --muted: #2D3748; /* Dark charcoal */
   --muted-foreground: #CBD5E0; /* Light gray */
-  --accent: #F6AD55; /* Lighter soft coral */
+  --accent: #B88A5A; /* Lighter golden tan */
   --accent-foreground: #1A202C;
   --destructive: #FC8181; /* Lighter destructive red */
   --destructive-foreground: #1A202C;
   --border: #4A5568; /* Medium gray border */
   --input: #2D3748;
-  --ring: #68D391 / 0.5;
-  --chart-1: #68D391;
-  --chart-2: #81E6D9;
-  --chart-3: #F6AD55;
-  --chart-4: #F8F6F1;
-  --chart-5: #4A7C59;
+  --ring: #B88A5A / 0.5;
+  --chart-1: #B88A5A;
+  --chart-2: #A27145;
+  --chart-3: #C19A6B;
+  --chart-4: #F8F5F2;
+  --chart-5: #E5D6C6;
   --sidebar: #2D3748;
-  --sidebar-foreground: #F8F6F1;
-  --sidebar-primary: #68D391;
+  --sidebar-foreground: #F8F5F2;
+  --sidebar-primary: #B88A5A;
   --sidebar-primary-foreground: #1A202C;
-  --sidebar-accent: #81E6D9;
+  --sidebar-accent: #A27145;
   --sidebar-accent-foreground: #1A202C;
   --sidebar-border: #4A5568;
-  --sidebar-ring: #68D391 / 0.5;
+  --sidebar-ring: #B88A5A / 0.5;
+  
+  /* Dark mode brand colors */
+  --brand-bg: #2D3748;
+  --accent-bg: #4A5568;
+  --accent-original: #B88A5A;
+  --accent-light: #C19A6B;
+  --neutral-light: #4A5568;
+  --neutral-mid: #718096;
+  --earth-brown: #A27145;
+  --warm-ochre: #C19A6B;
+  --soft-sienna: #B8860B;
+  --muted-terracotta: #A0522D;
+  --light-umber: #8B7355;
+  --warm-beige: #4A5568;
+  --soft-khaki: #718096;
+  --warm-cream: #2D3748;
 }
 
 @theme inline {
@@ -114,7 +146,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Added healthcare-focused font configuration */
+  /* Added Medow Foundation font configuration */
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-space-grotesk);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -128,7 +160,7 @@
     @apply bg-background text-foreground font-sans;
   }
 
-  /* Added healthcare-specific typography styles */
+  /* Added Medow Foundation typography styles */
   h1,
   h2,
   h3,
@@ -138,49 +170,141 @@
     @apply font-serif font-bold;
   }
 
-  /* Updated gradient with new color scheme */
-  .meadow-gradient {
-    background: linear-gradient(135deg, #4A7C59, #5B8A8A);
+  /* Updated gradient with new diverse Medow Foundation color scheme */
+  .medow-gradient {
+    background: linear-gradient(135deg, #5D4A3A, #8B6B3F, #A27145);
   }
 
-  .meadow-text-gradient {
-    background: linear-gradient(135deg, #4A7C59, #5B8A8A);
+  .medow-text-gradient {
+    background: linear-gradient(135deg, #5D4A3A, #8B6B3F, #A27145);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* New utility classes for the improved color scheme */
-  .bg-sage {
-    background-color: #4A7C59;
+  /* New utility classes for the diverse Medow Foundation color scheme */
+  .bg-primary {
+    background-color: #5D4A3A;
   }
   
-  .bg-teal {
-    background-color: #5B8A8A;
+  .bg-accent {
+    background-color: #8B6B3F;
   }
   
-  .bg-coral {
-    background-color: #D4A574;
+  .bg-accent-original {
+    background-color: #A27145;
   }
   
-  .bg-cream {
-    background-color: #F8F6F1;
+  .bg-accent-light {
+    background-color: #B88A5A;
   }
   
-  .text-sage {
-    color: #4A7C59;
+  .bg-brand {
+    background-color: #E5D6C6;
   }
   
-  .text-teal {
-    color: #5B8A8A;
+  .bg-page {
+    background-color: #F8F5F2;
   }
   
-  .text-coral {
-    color: #D4A574;
+  .bg-card {
+    background-color: #F0EBE6;
   }
   
-  .text-charcoal {
-    color: #2C3E50;
+  .bg-accent-bg {
+    background-color: #F5F0EB;
+  }
+  
+  .bg-earth-brown {
+    background-color: #7A5C3A;
+  }
+  
+  .bg-warm-ochre {
+    background-color: #C19A6B;
+  }
+  
+  .bg-soft-sienna {
+    background-color: #B8860B;
+  }
+  
+  .bg-muted-terracotta {
+    background-color: #A0522D;
+  }
+  
+  .bg-light-umber {
+    background-color: #8B7355;
+  }
+  
+  .bg-warm-beige {
+    background-color: #F5E6D3;
+  }
+  
+  .bg-soft-khaki {
+    background-color: #C3B091;
+  }
+  
+  .bg-warm-cream {
+    background-color: #FDF5E6;
+  }
+  
+  .text-primary {
+    color: #5D4A3A;
+  }
+  
+  .text-accent {
+    color: #8B6B3F;
+  }
+  
+  .text-accent-original {
+    color: #A27145;
+  }
+  
+  .text-accent-light {
+    color: #B88A5A;
+  }
+  
+  .text-brand {
+    color: #E5D6C6;
+  }
+  
+  .text-neutral-light {
+    color: #D4C4B0;
+  }
+  
+  .text-neutral-mid {
+    color: #9A8B7A;
+  }
+  
+  .text-earth-brown {
+    color: #7A5C3A;
+  }
+  
+  .text-warm-ochre {
+    color: #C19A6B;
+  }
+  
+  .text-soft-sienna {
+    color: #B8860B;
+  }
+  
+  .text-muted-terracotta {
+    color: #A0522D;
+  }
+  
+  .text-light-umber {
+    color: #8B7355;
+  }
+  
+  .text-warm-beige {
+    color: #F5E6D3;
+  }
+  
+  .text-soft-khaki {
+    color: #C3B091;
+  }
+  
+  .text-warm-cream {
+    color: #FDF5E6;
   }
 }
 

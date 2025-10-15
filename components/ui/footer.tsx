@@ -14,7 +14,7 @@ export function Footer() {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <Heart className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="font-serif font-bold text-xl text-foreground">Meadow Foundation</span>
+              <span className="font-serif font-bold text-xl text-foreground">Medow Foundation</span>
             </Link>
             <p className="text-muted-foreground text-sm">
               Physiotherapy changes lives. We raise awareness, share stories, and connect communities with
@@ -27,28 +27,16 @@ export function Footer() {
             <h3 className="font-serif font-semibold text-foreground">Quick Links</h3>
             <div className="space-y-2">
               <Link
-                href="/about"
+                href="/our-story"
                 className="block text-muted-foreground hover:text-foreground transition-colors text-sm"
               >
-                About Us
+                Our Story
               </Link>
               <Link
-                href="/initiatives"
+                href="/contact"
                 className="block text-muted-foreground hover:text-foreground transition-colors text-sm"
               >
-                Our Initiatives
-              </Link>
-              <Link
-                href="/blog"
-                className="block text-muted-foreground hover:text-foreground transition-colors text-sm"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/impact"
-                className="block text-muted-foreground hover:text-foreground transition-colors text-sm"
-              >
-                Impact Dashboard
+                Contact Us
               </Link>
             </div>
           </div>
@@ -59,15 +47,15 @@ export function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-muted-foreground text-sm">
                 <Mail className="w-4 h-4" />
-                <span>info@meadowfoundation.org</span>
+                <span>medowfoundation99@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground text-sm">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>(469) 347-5474</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground text-sm">
                 <MapPin className="w-4 h-4" />
-                <span>123 Health St, Medical City</span>
+                <span>1050 S Preston Rd #116, Celina, TX 75009</span>
               </div>
             </div>
           </div>
@@ -86,7 +74,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">© 2024 Meadow Foundation. All rights reserved.</p>
+          <p className="text-muted-foreground text-sm">© 2024 Medow Foundation. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link
               href="/legal/privacy"

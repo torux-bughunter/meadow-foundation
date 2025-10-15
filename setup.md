@@ -1,4 +1,4 @@
-# Meadow Foundation Setup Guide
+# Medow Foundation Setup Guide
 
 ## Environment Variables
 

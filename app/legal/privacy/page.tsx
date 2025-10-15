@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
             <section className="space-y-4">
               <h2 className="text-2xl font-serif font-bold text-foreground">Introduction</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Meadow Foundation ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains
+                Medow Foundation ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains
                 how we collect, use, disclose, and safeguard your information when you visit our website or use our
                 services.
               </p>
@@ -143,7 +143,7 @@ export default function PrivacyPolicyPage() {
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
               <div className="text-muted-foreground">
-                <p>Email: privacy@meadowfoundation.org</p>
+                <p>Email: privacy@medowfoundation.org</p>
                 <p>Phone: +1 (555) 123-4567</p>
                 <p>
                   Address: 123 Health Street

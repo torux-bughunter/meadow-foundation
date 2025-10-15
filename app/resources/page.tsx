@@ -256,7 +256,7 @@ export default function ResourcesPage() {
 
             <AccordionItem value="how-to-volunteer" className="border border-border rounded-lg px-6">
               <AccordionTrigger className="text-left font-serif font-semibold">
-                How can I volunteer with Meadow Foundation?
+                How can I volunteer with Medow Foundation?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed">
                 We welcome volunteers from all backgrounds! You can help with community outreach, content creation,

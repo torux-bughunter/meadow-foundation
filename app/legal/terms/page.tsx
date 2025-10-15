@@ -24,7 +24,7 @@ export default function TermsOfServicePage() {
             <section className="space-y-4">
               <h2 className="text-2xl font-serif font-bold text-foreground">Acceptance of Terms</h2>
               <p className="text-muted-foreground leading-relaxed">
-                By accessing and using the Meadow Foundation website and services, you accept and agree to be bound by the
+                By accessing and using the Medow Foundation website and services, you accept and agree to be bound by the
                 terms and provision of this agreement. If you do not agree to abide by the above, please do not use this
                 service.
               </p>
@@ -33,7 +33,7 @@ export default function TermsOfServicePage() {
             <section className="space-y-4">
               <h2 className="text-2xl font-serif font-bold text-foreground">Use License</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Permission is granted to temporarily download one copy of the materials on Meadow Foundation's website for
+                Permission is granted to temporarily download one copy of the materials on Medow Foundation's website for
                 personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of
                 title, and under this license you may not:
               </p>
@@ -87,9 +87,9 @@ export default function TermsOfServicePage() {
             <section className="space-y-4">
               <h2 className="text-2xl font-serif font-bold text-foreground">Limitation of Liability</h2>
               <p className="text-muted-foreground leading-relaxed">
-                In no event shall Meadow Foundation or its suppliers be liable for any damages (including, without limitation,
+                In no event shall Medow Foundation or its suppliers be liable for any damages (including, without limitation,
                 damages for loss of data or profit, or due to business interruption) arising out of the use or inability
-                to use the materials on Meadow Foundation's website.
+                to use the materials on Medow Foundation's website.
               </p>
             </section>
 
@@ -97,7 +97,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-2xl font-serif font-bold text-foreground">Governing Law</h2>
               <p className="text-muted-foreground leading-relaxed">
                 These terms and conditions are governed by and construed in accordance with the laws of the jurisdiction
-                in which Meadow Foundation operates, and you irrevocably submit to the exclusive jurisdiction of the courts in
+                in which Medow Foundation operates, and you irrevocably submit to the exclusive jurisdiction of the courts in
                 that state or location.
               </p>
             </section>
@@ -105,7 +105,7 @@ export default function TermsOfServicePage() {
             <section className="space-y-4">
               <h2 className="text-2xl font-serif font-bold text-foreground">Changes to Terms</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Meadow Foundation may revise these terms of service at any time without notice. By using this website, you are
+                Medow Foundation may revise these terms of service at any time without notice. By using this website, you are
                 agreeing to be bound by the then current version of these terms of service.
               </p>
             </section>
@@ -116,7 +116,7 @@ export default function TermsOfServicePage() {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <div className="text-muted-foreground">
-                <p>Email: legal@meadowfoundation.org</p>
+                <p>Email: legal@medowfoundation.org</p>
                 <p>Phone: +1 (555) 123-4567</p>
                 <p>
                   Address: 123 Health Street
