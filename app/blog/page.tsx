@@ -10,6 +10,34 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search, Calendar, Clock, Filter, ArrowRight, User, Tag } from "lucide-react"
 import { apostropheClient } from '@/lib/apostrophe-client'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
+// Helper function to calculate reading time
+function calculateReadingTime(content: any): number {
+  if (!content) return 3
+  
+  let text = ''
+  
+  // Handle different content types
+  if (typeof content === 'string') {
+    text = content
+  } else if (typeof content === 'object' && content !== null) {
+    // For ApostropheCMS rich text content, extract text
+    text = JSON.stringify(content)
+    // Remove HTML-like tags and metadata
+    text = text.replace(/<[^>]*>/g, '')
+    text = text.replace(/[{}":,]/g, ' ')
+    text = text.replace(/\s+/g, ' ')
+  }
+  
+  // Calculate reading time (average 200 words per minute)
+  const wordCount = text.trim().split(/\s+/).length
+  const readingTime = Math.ceil(wordCount / 200)
+  
+  return Math.max(1, readingTime) // Minimum 1 minute
+}
+
 interface BlogPost {
   _id: string
   title: string
@@ -143,7 +171,7 @@ export default async function BlogPage() {
                         {/* Reading Time Estimate */}
                         <span className="text-xs text-muted-foreground flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          {post.content ? Math.ceil((post.content.length / 200)) : 3} min read
+                          {calculateReadingTime(post.content)} min read
                         </span>
                       </div>
                     </div>

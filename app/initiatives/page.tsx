@@ -3,6 +3,9 @@ import { Footer } from "@/components/ui/footer"
 import { apostropheClient } from '@/lib/apostrophe-client'
 import { Calendar, MapPin, Users, ArrowRight, Clock, Target } from "lucide-react"
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 interface Initiative {
   _id: string
   title: string

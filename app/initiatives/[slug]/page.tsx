@@ -4,6 +4,9 @@ import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
 import { apostropheClient } from '@/lib/apostrophe-client'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 interface Initiative {
   _id: string
   title: string
