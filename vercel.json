@@ -1,9 +1,0 @@
-{
-  "functions": {
-    "app/**/*.tsx": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "regions": ["iad1"],
-  "framework": "nextjs"
-}
