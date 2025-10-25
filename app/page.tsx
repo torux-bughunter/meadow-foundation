@@ -21,9 +21,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge variant="secondary" className="w-fit bg-secondary/20 text-secondary-foreground border-secondary/30">
-                  Medow Foundation - Empowering Communities
-                </Badge>
+                <Badge variant="outline">Medow Foundation - Empowering Communities</Badge>
                 <h1 className="text-4xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
                   Transforming lives through physiotherapy
                 </h1>
@@ -173,7 +171,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Avyay Kodali */}
             <Card className="text-center border-border hover:border-primary/30 transition-all duration-200 hover:shadow-lg">
               <CardContent className="p-6">
@@ -187,7 +185,7 @@ export default function HomePage() {
                   />
                 </div>
                 <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Avyay Kodali</h3>
-                <p className="text-sm text-primary font-medium mb-2">Co-Founder</p>
+                <p className="text-sm text-secondary font-medium mb-2">Co-Founder</p>
               </CardContent>
             </Card>
 
@@ -208,6 +206,23 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
+            {/* Tarunesh Sathish */}
+            <Card className="text-center border-border hover:border-secondary/30 transition-all duration-200 hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                  <Image
+                    src="/tarunesh.png"
+                    alt="Tarunesh Sathish"
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Tarunesh Sathish</h3>
+                <p className="text-sm text-secondary font-medium mb-2">Executive Director</p>
+              </CardContent>
+            </Card>
+
             {/* Shradha Rachamreddy */}
             <Card className="text-center border-border hover:border-accent/30 transition-all duration-200 hover:shadow-lg">
               <CardContent className="p-6">
@@ -221,7 +236,7 @@ export default function HomePage() {
                   />
                 </div>
                 <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Shradha Rachamreddy</h3>
-                <p className="text-sm text-accent font-medium mb-2">Regional Director</p>
+                <p className="text-sm text-secondary font-medium mb-2">Regional Director</p>
               </CardContent>
             </Card>
 
@@ -238,7 +253,7 @@ export default function HomePage() {
                   />
                 </div>
                 <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Shravya Dumbala</h3>
-                <p className="text-sm text-primary font-medium mb-2">Regional Director</p>
+                <p className="text-sm text-secondary font-medium mb-2">Regional Director</p>
               </CardContent>
             </Card>
 
