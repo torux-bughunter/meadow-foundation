@@ -167,7 +167,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {post.featuredImage && (
             <div className="mb-8">
               <img
-                src={`http://localhost:3001${post.featuredImage._urls?.full || post.featuredImage._urls?.max || post.featuredImage._urls?.original || ''}`}
+                src={`https://cms.themedowfoundation.org${post.featuredImage._urls?.full || post.featuredImage._urls?.max || post.featuredImage._urls?.original || ''}`}
                 alt={post.title}
                 className="w-full h-64 object-cover rounded-lg"
               />

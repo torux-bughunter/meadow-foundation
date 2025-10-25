@@ -80,7 +80,7 @@ CMS will be available at: `http://localhost:3000`
 cd physiotherapy-website  
 npm run dev
 ```
-Website will be available at: `http://localhost:3001`
+Website will be available at: `https://your-website-domain.com`
 
 ### 3. Create Your First Content
 1. Go to `http://localhost:3000`
@@ -92,7 +92,7 @@ Website will be available at: `http://localhost:3001`
 7. Save
 
 ### 4. View on Website
-- Go to `http://localhost:3001/blog`
+- Go to `https://your-website-domain.com/blog`
 - Your new blog post should appear!
 
 ## Configuration

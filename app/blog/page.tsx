@@ -72,7 +72,7 @@ export default async function BlogPage() {
                     <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-muted to-muted/50">
                       {post.featuredImage?._urls?.full ? (
                         <Image
-                          src={`http://localhost:3001${post.featuredImage._urls.full}`}
+                          src={`https://cms.themedowfoundation.org${post.featuredImage._urls.full}`}
                           alt={post.featuredImage.title || post.title}
                           fill
                           className="object-cover"
