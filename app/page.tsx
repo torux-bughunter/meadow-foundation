@@ -29,7 +29,7 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10 py-20 lg:py-32">
+      <section className="relative bg-gradient-to-br from-primary/5 to-coral/5 py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -57,7 +57,7 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-secondary p-1">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-coral p-1">
                 <div className="w-full h-full bg-background rounded-xl flex items-center justify-center">
                   <Image
                     src="/cover.jpeg"
@@ -74,19 +74,26 @@ export default function HomePage() {
       </section>
 
       {/* Impact Counters */}
-      <section className="py-16 bg-muted/50">
+      <section id="our-work" className="py-20 bg-white border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12">
+            <Badge variant="outline">Our Work</Badge>
+            <h2 className="text-3xl lg:text-4xl font-serif font-bold text-foreground">Making an Impact</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Through our dedicated efforts, we're transforming lives and communities through physiotherapy care and education.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center space-y-2">
-              <div className="text-4xl font-serif font-bold text-primary">100+</div>
+              <div className="text-4xl font-serif font-bold text-coral">100+</div>
               <div className="text-muted-foreground">Patients Served Each Day</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-4xl font-serif font-bold text-secondary">$20,000+</div>
+              <div className="text-4xl font-serif font-bold text-coral">$20,000+</div>
               <div className="text-muted-foreground">Raised</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-4xl font-serif font-bold text-accent">1K+</div>
+              <div className="text-4xl font-serif font-bold text-coral">1K+</div>
               <div className="text-muted-foreground">Awareness Raised</div>
             </div>
           </div>
@@ -95,7 +102,7 @@ export default function HomePage() {
 
 
       {/* Our Initiatives */}
-      <section className="py-20 bg-muted/30">
+      <section id="initiatives" className="py-20 bg-coral-bg border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-12">
             <Badge variant="outline">Our Initiatives</Badge>
@@ -108,20 +115,20 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Physiotherapy Clinic */}
             <Card 
-              className="cursor-pointer hover:shadow-lg transition-all duration-300 border-border hover:border-primary/30"
+              className="cursor-pointer hover:shadow-lg transition-all duration-300 border-border hover:border-coral/30 h-full flex flex-col"
               onClick={() => openInitiativeDialog('clinic')}
             >
-              <div className="aspect-video relative bg-gradient-to-br from-primary/10 to-primary/5">
+              <div className="aspect-video relative bg-gradient-to-br from-coral/10 to-coral/5">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Stethoscope className="w-16 h-16 text-primary" />
+                  <Stethoscope className="w-16 h-16 text-coral" />
                 </div>
               </div>
-              <CardContent className="p-6">
+              <CardContent className="p-6 flex-1 flex flex-col">
                 <CardTitle className="text-xl mb-3">Physiotherapy Clinic in India</CardTitle>
-                <CardDescription className="mb-4">
+                <CardDescription className="mb-4 flex-1">
                   Expert, affordable physiotherapy care accessible to underserved communities with modern equipment and personalized treatment plans.
                 </CardDescription>
-                <Button variant="outline" className="w-full">
+                <Button variant="coral" className="w-full mt-auto">
                   Learn More
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -129,43 +136,42 @@ export default function HomePage() {
             </Card>
 
             {/* Blogs */}
-            <Card 
-              className="cursor-pointer hover:shadow-lg transition-all duration-300 border-border hover:border-secondary/30"
-              onClick={() => openInitiativeDialog('blog')}
-            >
-              <div className="aspect-video relative bg-gradient-to-br from-secondary/10 to-secondary/5">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <BookOpen className="w-16 h-16 text-secondary" />
+            <Link href="/blog" className="h-full">
+              <Card className="cursor-pointer hover:shadow-lg transition-all duration-300 border-border hover:border-coral/30 h-full flex flex-col">
+                <div className="aspect-video relative bg-gradient-to-br from-coral/10 to-coral/5">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <BookOpen className="w-16 h-16 text-coral" />
+                  </div>
                 </div>
-              </div>
-              <CardContent className="p-6">
-                <CardTitle className="text-xl mb-3">Our Blog</CardTitle>
-                <CardDescription className="mb-4">
-                  Practical tips, inspiring stories, and expert insights about physiotherapy and community health education.
-                </CardDescription>
-                <Button variant="outline" className="w-full">
-                  Coming Soon
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </CardContent>
-            </Card>
+                <CardContent className="p-6 flex-1 flex flex-col">
+                  <CardTitle className="text-xl mb-3">Our Blog</CardTitle>
+                  <CardDescription className="mb-4 flex-1">
+                    Practical tips, inspiring stories, and expert insights about physiotherapy and community health education.
+                  </CardDescription>
+                  <Button variant="coral" className="w-full mt-auto">
+                    Read Our Blog
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
 
             {/* Spelling Bee */}
             <Card 
-              className="cursor-pointer hover:shadow-lg transition-all duration-300 border-border hover:border-accent/30"
+              className="cursor-pointer hover:shadow-lg transition-all duration-300 border-border hover:border-coral/30 h-full flex flex-col"
               onClick={() => openInitiativeDialog('spelling-bee')}
             >
-              <div className="aspect-video relative bg-gradient-to-br from-accent/10 to-accent/5">
+              <div className="aspect-video relative bg-gradient-to-br from-coral/10 to-coral/5">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Trophy className="w-16 h-16 text-accent" />
+                  <Trophy className="w-16 h-16 text-coral" />
                 </div>
               </div>
-              <CardContent className="p-6">
+              <CardContent className="p-6 flex-1 flex flex-col">
                 <CardTitle className="text-xl mb-3">MEDOW Spelling Bee</CardTitle>
-                <CardDescription className="mb-4">
-                  Fun and educational spelling competition with expert guidance from 2025 Scripps National Spelling Bee Champion Faizan Zaki.
+                <CardDescription className="mb-4 flex-1">
+                  Fun and educational spelling competition with expert guidance from 2025 Scripps National Spelling Bee Champion Faizan Zaki, 2024 Scripps National Spelling Bee 3rd place Shradha Rachamreddy, and 2023 Scripps National Spelling Bee 14th place Avyay Kodali.
                 </CardDescription>
-                <Button variant="outline" className="w-full">
+                <Button variant="coral" className="w-full mt-auto">
                   Sign Up Now
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -176,7 +182,7 @@ export default function HomePage() {
       </section>
 
       {/* Our Team */}
-      <section className="py-20 bg-muted/30">
+      <section id="our-team" className="py-20 bg-white border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-12">
             <Badge variant="outline">Our Team</Badge>
@@ -186,7 +192,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {/* Avyay Kodali */}
             <Card className="text-center border-border hover:border-primary/30 transition-all duration-200 hover:shadow-lg">
               <CardContent className="p-6">
@@ -201,9 +207,6 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Avyay Kodali</h3>
                 <p className="text-sm text-primary font-medium mb-2">Co-Founder</p>
-                <p className="text-sm text-muted-foreground">
-                  Leading strategic initiatives and community partnerships to expand physiotherapy access globally.
-                </p>
               </CardContent>
             </Card>
 
@@ -221,9 +224,6 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Dhanvi Kodali</h3>
                 <p className="text-sm text-secondary font-medium mb-2">Co-Founder</p>
-                <p className="text-sm text-muted-foreground">
-                  Driving operational excellence and program development for sustainable healthcare impact.
-                </p>
               </CardContent>
             </Card>
 
@@ -241,29 +241,40 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Shradha Rachamreddy</h3>
                 <p className="text-sm text-accent font-medium mb-2">Regional Director</p>
-                <p className="text-sm text-muted-foreground">
-                  Managing regional operations and building strategic partnerships across multiple communities.
-                </p>
               </CardContent>
             </Card>
 
-            {/* Sravya */}
+            {/* Shravya */}
             <Card className="text-center border-border hover:border-primary/30 transition-all duration-200 hover:shadow-lg">
               <CardContent className="p-6">
                 <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
                   <Image
                     src="/shravya.png"
-                    alt="Sravya"
+                    alt="Shravya"
                     width={96}
                     height={96}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Sravya</h3>
+                <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Shravya Dumbala</h3>
                 <p className="text-sm text-primary font-medium mb-2">Regional Director</p>
-                <p className="text-sm text-muted-foreground">
-                  Overseeing program implementation and ensuring quality standards in regional healthcare delivery.
-                </p>
+              </CardContent>
+            </Card>
+
+            {/* Yashika Aduma */}
+            <Card className="text-center border-border hover:border-secondary/30 transition-all duration-200 hover:shadow-lg">
+              <CardContent className="p-6">
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                  <Image
+                    src="/yashika.png"
+                    alt="Yashika Aduma"
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-serif font-semibold text-lg text-foreground mb-1">Yashika Aduma</h3>
+                <p className="text-sm text-secondary font-medium mb-2">Regional Director</p>
               </CardContent>
             </Card>
           </div>

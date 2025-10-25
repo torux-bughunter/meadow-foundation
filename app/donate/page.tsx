@@ -50,7 +50,7 @@ const impactAreas = [
     title: "Education & Training",
     description: "Training the next generation of physiotherapists",
     percentage: 30,
-    color: "bg-green-500",
+    color: "bg-coral",
   },
   {
     icon: Stethoscope,

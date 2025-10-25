@@ -230,8 +230,8 @@ export default function ImpactPage() {
             <Card className="border-border">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                    <DollarSign className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-coral-bg rounded-lg flex items-center justify-center">
+                    <DollarSign className="w-6 h-6 text-coral" />
                   </div>
                   <Button variant="ghost" size="sm" asChild>
                     <Link href="https://drive.google.com/folder/funding-proof" target="_blank">

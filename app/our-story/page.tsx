@@ -12,7 +12,7 @@ export default function OurStoryPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10 py-20 lg:py-32">
+      <section className="relative bg-gradient-to-br from-primary/5 to-coral/5 py-12 lg:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6">
             <Badge variant="secondary" className="w-fit mx-auto bg-secondary/20 text-secondary-foreground border-secondary/30">
@@ -29,7 +29,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Main Story Content */}
-      <section className="py-20">
+      <section className="py-20 bg-white border-t border-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <div className="space-y-8 text-muted-foreground leading-relaxed">
@@ -94,7 +94,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Partnership Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-coral-bg border-t border-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <Badge variant="outline">Our Partnership</Badge>
@@ -115,7 +115,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-primary/5 to-accent/5">
+      <section className="py-20 bg-white border-t border-border">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold text-foreground mb-6">
             Join Our Mission

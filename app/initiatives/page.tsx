@@ -68,7 +68,7 @@ export default async function InitiativesPage() {
                       {initiative.status && (
                         <div className="absolute top-4 left-4">
                           <span className={`px-3 py-1.5 rounded-full text-xs font-medium shadow-lg backdrop-blur-sm ${
-                            initiative.status === 'active' ? 'bg-green-500/90 text-white' :
+                            initiative.status === 'active' ? 'bg-coral/90 text-white' :
                             initiative.status === 'completed' ? 'bg-blue-500/90 text-white' :
                             initiative.status === 'planning' ? 'bg-yellow-500/90 text-white' :
                             'bg-gray-500/90 text-white'

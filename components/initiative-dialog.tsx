@@ -117,7 +117,7 @@ export function InitiativeDialog({ open, onOpenChange, initiative }: InitiativeD
             </div>
             <div className="flex items-center gap-2 text-sm">
               <Users className="w-4 h-4 text-accent" />
-              <span className="font-medium">All grade levels welcome</span>
+              <span className="font-medium">Grades 1 - 8</span>
             </div>
           </div>
         </div>

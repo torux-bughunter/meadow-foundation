@@ -21,6 +21,7 @@ const buttonVariants = cva(
           "hover:bg-accent/10 hover:text-accent-foreground dark:hover:bg-accent/20 transition-all duration-200",
         link: "text-primary underline-offset-4 hover:underline hover:text-primary/80 transition-colors duration-200",
         accent: "bg-accent text-accent-foreground shadow-xs hover:bg-accent/90 hover:shadow-sm transition-all duration-200",
+        coral: "bg-coral text-white shadow-xs hover:bg-coral-dark hover:shadow-sm transition-all duration-200",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

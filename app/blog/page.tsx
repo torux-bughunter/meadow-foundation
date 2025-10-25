@@ -61,7 +61,7 @@ export default async function BlogPage() {
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">No blog posts yet</h3>
                 <p className="text-muted-foreground max-w-md mx-auto">
-                  Content will appear here once you create blog posts in the CMS. Start writing to share your insights!
+                  No blogs yet
                 </p>
               </div>
             ) : (

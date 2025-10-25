@@ -54,6 +54,12 @@
   --warm-beige: #F5E6D3; /* Warm Beige - very light warm tone */
   --soft-khaki: #C3B091; /* Soft Khaki - muted green-brown */
   --warm-cream: #FDF5E6; /* Warm Cream - lightest warm tone */
+  
+  /* NEW: Coral accent color for healthcare vibrancy */
+  --sage-green: #e4b1a5; /* Soft Coral - warm and approachable */
+  --sage-green-light: #f0c9c0; /* Lighter coral for backgrounds */
+  --sage-green-dark: #d19a8a; /* Darker coral for text and borders */
+  --sage-green-bg: #faf5f3; /* Very light coral for subtle backgrounds */
 }
 
 .dark {
@@ -106,6 +112,12 @@
   --warm-beige: #4A5568;
   --soft-khaki: #718096;
   --warm-cream: #2D3748;
+  
+  /* Dark mode coral variants */
+  --sage-green: #e4b1a5; /* Coral for dark mode */
+  --sage-green-light: #f0c9c0; /* Even lighter for backgrounds */
+  --sage-green-dark: #d19a8a; /* Darker coral for text */
+  --sage-green-bg: #2A1F1C; /* Dark coral background */
 }
 
 @theme inline {
@@ -147,14 +159,18 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* Added Medow Foundation font configuration */
-  --font-sans: var(--font-dm-sans);
-  --font-serif: var(--font-space-grotesk);
+  --font-sans: var(--font-poppins);
+  --font-serif: var(--font-poppins);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for sticky nav height */
   }
   body {
     @apply bg-background text-foreground font-sans;
@@ -306,6 +322,59 @@
   .text-warm-cream {
     color: #FDF5E6;
   }
+  
+  /* Coral utility classes */
+  .bg-coral {
+    background-color: var(--sage-green);
+  }
+  
+  .bg-coral-light {
+    background-color: var(--sage-green-light);
+  }
+  
+  .bg-coral-dark {
+    background-color: var(--sage-green-dark);
+  }
+  
+  .bg-coral-bg {
+    background-color: var(--sage-green-bg);
+  }
+  
+  .text-coral {
+    color: var(--sage-green);
+  }
+  
+  .text-coral-light {
+    color: var(--sage-green-light);
+  }
+  
+  .text-coral-dark {
+    color: var(--sage-green-dark);
+  }
+  
+  .border-coral {
+    border-color: var(--sage-green);
+  }
+  
+  .border-coral-light {
+    border-color: var(--sage-green-light);
+  }
+  
+  .border-coral-dark {
+    border-color: var(--sage-green-dark);
+  }
+  
+  .hover\:bg-coral:hover {
+    background-color: var(--sage-green);
+  }
+  
+  .hover\:text-coral:hover {
+    color: var(--sage-green);
+  }
+  
+  .hover\:border-coral:hover {
+    border-color: var(--sage-green);
+  }
 }
 
 /* Blog content styling */
@@ -345,4 +414,30 @@
 
 .blog-content strong {
   font-weight: 600;
+}
+
+/* Smooth scroll animations */
+section {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navigation link hover animations */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--sage-green);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }

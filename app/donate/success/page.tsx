@@ -9,8 +9,8 @@ export default function DonationSuccessPage() {
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="text-center border-border">
           <CardContent className="p-12">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-green-600" />
+            <div className="w-20 h-20 bg-coral-bg rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-10 h-10 text-coral" />
             </div>
 
             <h1 className="font-serif text-3xl font-bold text-foreground mb-4">Thank You for Your Donation!</h1>
