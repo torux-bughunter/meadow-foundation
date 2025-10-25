@@ -24,12 +24,7 @@ interface InitiativeDetailPageProps {
   params: Promise<{ slug: string }>
 }
 
-export async function generateStaticParams() {
-  const initiatives: Initiative[] = await apostropheClient.getInitiatives()
-  return initiatives.map((initiative: Initiative) => ({
-    slug: initiative.slug,
-  }))
-}
+// Removed generateStaticParams for SSR - pages will be generated on-demand
 
 export async function generateMetadata({ params }: InitiativeDetailPageProps): Promise<Metadata> {
   const resolvedParams = await params

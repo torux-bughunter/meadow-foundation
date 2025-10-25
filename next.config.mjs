@@ -1,15 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Temporarily disable static export for debugging
-  // output: 'export',
-  // trailingSlash: true,
+  // SSR Configuration - pages will be rendered on the server
+  // Removed static export configuration for server-side rendering
   
   // Basic configuration for the physiotherapy website
   images: {
     unoptimized: true,
   },
   
-  // Disable server-side features for static export
+  // Enable server-side features for SSR
   experimental: {
     // Add any experimental features here
   }

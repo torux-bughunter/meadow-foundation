@@ -1,32 +1,19 @@
-"use client"
-
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { InitiativeDialog } from "@/components/initiative-dialog"
+import { InitiativeProvider } from "@/components/initiative-provider"
+import { InitiativeCard } from "@/components/initiative-card"
 import { ArrowRight, Users, Heart, TrendingUp, Calendar, User, ExternalLink, Stethoscope, BookOpen, Trophy } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
 
 export default function HomePage() {
-  const [initiativeDialog, setInitiativeDialog] = useState<{
-    open: boolean
-    initiative: 'clinic' | 'blog' | 'spelling-bee' | null
-  }>({
-    open: false,
-    initiative: null
-  })
-
-  const openInitiativeDialog = (initiative: 'clinic' | 'blog' | 'spelling-bee') => {
-    setInitiativeDialog({ open: true, initiative })
-  }
-
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <InitiativeProvider>
+      <div className="min-h-screen bg-background">
+        <Navigation />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 to-coral/5 py-12 lg:py-16">
@@ -114,10 +101,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Physiotherapy Clinic */}
-            <Card 
-              className="cursor-pointer hover:shadow-lg transition-all duration-300 border-border hover:border-coral/30 h-full flex flex-col"
-              onClick={() => openInitiativeDialog('clinic')}
-            >
+            <InitiativeCard initiative="clinic">
               <div className="aspect-video relative bg-gradient-to-br from-coral/10 to-coral/5">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Stethoscope className="w-16 h-16 text-coral" />
@@ -133,7 +117,7 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </CardContent>
-            </Card>
+            </InitiativeCard>
 
             {/* Blogs */}
             <Link href="/blog" className="h-full">
@@ -157,10 +141,7 @@ export default function HomePage() {
             </Link>
 
             {/* Spelling Bee */}
-            <Card 
-              className="cursor-pointer hover:shadow-lg transition-all duration-300 border-border hover:border-coral/30 h-full flex flex-col"
-              onClick={() => openInitiativeDialog('spelling-bee')}
-            >
+            <InitiativeCard initiative="spelling-bee">
               <div className="aspect-video relative bg-gradient-to-br from-coral/10 to-coral/5">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Trophy className="w-16 h-16 text-coral" />
@@ -176,7 +157,7 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </CardContent>
-            </Card>
+            </InitiativeCard>
           </div>
         </div>
       </section>
@@ -302,13 +283,7 @@ export default function HomePage() {
       </section>
 
       <Footer />
-      
-      {/* Initiative Dialog */}
-      <InitiativeDialog 
-        open={initiativeDialog.open}
-        onOpenChange={(open) => setInitiativeDialog({ open, initiative: null })}
-        initiative={initiativeDialog.initiative}
-      />
     </div>
+    </InitiativeProvider>
   )
 }

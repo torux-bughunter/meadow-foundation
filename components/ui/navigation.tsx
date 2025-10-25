@@ -26,6 +26,9 @@ const scrollToSection = (href: string) => {
         block: 'start',
         inline: 'nearest'
       })
+    } else {
+      // If element not found, navigate to home page with hash
+      window.location.href = `/#${elementId}`
     }
   }
 }
@@ -50,19 +53,23 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 ml-8">
             {navigationItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => {
-                  if (item.href.startsWith('/#')) {
-                    scrollToSection(item.href)
-                  } else {
-                    window.location.href = item.href
-                  }
-                }}
-                className="text-muted-foreground hover:text-coral transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </button>
+              item.href.startsWith('/#') ? (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-muted-foreground hover:text-coral transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-muted-foreground hover:text-coral transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </div>
 
@@ -79,20 +86,27 @@ export function Navigation() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
               {navigationItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => {
-                    if (item.href.startsWith('/#')) {
+                item.href.startsWith('/#') ? (
+                  <button
+                    key={item.name}
+                    onClick={() => {
                       scrollToSection(item.href)
-                    } else {
-                      window.location.href = item.href
-                    }
-                    setIsOpen(false)
-                  }}
-                  className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-coral transition-colors duration-200 font-medium"
-                >
-                  {item.name}
-                </button>
+                      setIsOpen(false)
+                    }}
+                    className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-coral transition-colors duration-200 font-medium"
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-coral transition-colors duration-200 font-medium"
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>

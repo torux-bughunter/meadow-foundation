@@ -100,13 +100,7 @@ function extractTextContent(content: any): string {
   return rendered.replace(/<[^>]*>/g, '').trim()
 }
 
-// Generate static params for static export
-export async function generateStaticParams() {
-  const posts: BlogPost[] = await apostropheClient.getBlogPosts()
-  return posts.map((post: BlogPost) => ({
-    slug: post.slug,
-  }))
-}
+// Removed generateStaticParams for SSR - pages will be generated on-demand
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const resolvedParams = await params
