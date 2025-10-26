@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
 import { apostropheClient } from '@/lib/apostrophe-client'
+import { config } from '@/lib/config'
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
@@ -164,7 +165,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {post.featuredImage && (
             <div className="mb-8">
               <img
-                src={`https://cms.themedowfoundation.org${post.featuredImage._urls?.full || post.featuredImage._urls?.max || post.featuredImage._urls?.original || ''}`}
+                src={(() => {
+                  const url = post.featuredImage._urls?.full || post.featuredImage._urls?.max || post.featuredImage._urls?.original || '';
+                  return url.startsWith('http') ? url : `${config.apostropheUrl}${url}`;
+                })()}
                 alt={post.title}
                 className="w-full h-64 object-cover rounded-lg"
               />
