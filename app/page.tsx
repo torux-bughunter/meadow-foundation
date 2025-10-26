@@ -78,8 +78,8 @@ export default function HomePage() {
               <div className="text-muted-foreground">Raised</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-4xl font-serif font-bold text-coral">1K+</div>
-              <div className="text-muted-foreground">Awareness Raised</div>
+              <div className="text-4xl font-serif font-bold text-coral">1,000+</div>
+              <div className="text-muted-foreground">People Reached</div>
             </div>
           </div>
         </div>
