@@ -74,8 +74,8 @@ export default async function BlogPage() {
                       {post.featuredImage?._urls?.full ? (
                         <Image
                           src={
-                            post.featuredImage._urls.full.startsWith('http') 
-                              ? post.featuredImage._urls.full 
+                            post.featuredImage._urls.full.startsWith('http')
+                              ? post.featuredImage._urls.full
                               : `${config.apostropheUrl}${post.featuredImage._urls.full}`
                           }
                           alt={post.featuredImage.title || post.title}
@@ -148,7 +148,7 @@ export default async function BlogPage() {
                         {/* Reading Time Estimate */}
                         <span className="text-xs text-muted-foreground flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          {post.content ? Math.ceil((post.content.length / 200)) : 3} min read
+                          {post.excerpt ? Math.ceil((post.excerpt.length / 200)) : 3} min read
                         </span>
                       </div>
                     </div>

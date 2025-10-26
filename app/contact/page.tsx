@@ -2,7 +2,7 @@ import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function ContactPage() {
   return (
@@ -23,7 +23,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-serif font-bold text-foreground">Contact Information</h2>
@@ -32,16 +32,16 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-coral" />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 flex-1 min-w-0">
                     <h3 className="font-serif font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">medowfoundation99@gmail.com</p>
+                    <p className="text-muted-foreground break-words">medowfoundation99@gmail.com</p>
                     <p className="text-sm text-muted-foreground">We typically respond within 24 hours</p>
                   </div>
                 </div>
@@ -57,7 +57,6 @@ export default function ContactPage() {
                   <div className="space-y-1">
                     <h3 className="font-serif font-semibold text-foreground">Phone</h3>
                     <p className="text-muted-foreground">(469) 347-5474</p>
-                    <p className="text-sm text-muted-foreground">Monday - Friday, 9:00 AM - 5:00 PM CST</p>
                   </div>
                 </div>
               </CardContent>
@@ -77,24 +76,6 @@ export default function ContactPage() {
                       Celina, TX 75009
                     </p>
                     <p className="text-sm text-muted-foreground">By appointment only</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-coral/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-coral" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="font-serif font-semibold text-foreground">Office Hours</h3>
-                    <div className="text-muted-foreground space-y-1">
-                      <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                      <p>Saturday: 10:00 AM - 2:00 PM</p>
-                      <p>Sunday: Closed</p>
-                    </div>
                   </div>
                 </div>
               </CardContent>
