@@ -16,10 +16,27 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cms.themedowfoundation.org'),
   title: "Medow Foundation - Physiotherapy Awareness & Community",
-  description:
-    "Raising awareness about physiotherapy, sharing stories, and connecting communities with evidence-based care.",
-  generator: "v0.app",
+  description: "Raising awareness about physiotherapy, sharing stories, and connecting communities with evidence-based care.",
+  generator: "Next.js",
+  icons: {
+    icon: "/Medow_Logo.png",
+    shortcut: "/Medow_Logo.png",
+    apple: "/Medow_Logo.png",
+  },
+  openGraph: {
+    title: "Medow Foundation - Physiotherapy Awareness & Community",
+    description: "Raising awareness about physiotherapy, sharing stories, and connecting communities with evidence-based care.",
+    type: "website",
+    images: ["/Medow_Logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Medow Foundation - Physiotherapy Awareness & Community",
+    description: "Raising awareness about physiotherapy, sharing stories, and connecting communities with evidence-based care.",
+    images: ["/Medow_Logo.png"],
+  },
 }
 
 export default function RootLayout({

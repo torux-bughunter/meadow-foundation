@@ -2,9 +2,21 @@ import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
 import { apostropheClient } from '@/lib/apostrophe-client'
 import { Calendar, MapPin, Users, ArrowRight, Clock, Target } from "lucide-react"
+import { Metadata } from 'next'
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
+
+// Page metadata
+export const metadata: Metadata = {
+  title: 'Our Initiatives - Medow Foundation',
+  description: 'Explore our key programs and initiatives designed to bring physiotherapy care and education to communities worldwide.',
+  openGraph: {
+    title: 'Our Initiatives - Medow Foundation',
+    description: 'Explore our key programs and initiatives designed to bring physiotherapy care and education to communities worldwide.',
+    type: 'website',
+  },
+}
 
 interface Initiative {
   _id: string

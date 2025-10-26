@@ -9,9 +9,21 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Search, Calendar, Clock, Filter, ArrowRight, User, Tag } from "lucide-react"
 import { apostropheClient } from '@/lib/apostrophe-client'
+import { Metadata } from 'next'
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
+
+// Page metadata
+export const metadata: Metadata = {
+  title: 'Physiotherapy Insights - Medow Foundation',
+  description: 'Expert knowledge, patient stories, and the latest developments in physiotherapy care and community health.',
+  openGraph: {
+    title: 'Physiotherapy Insights - Medow Foundation',
+    description: 'Expert knowledge, patient stories, and the latest developments in physiotherapy care and community health.',
+    type: 'website',
+  },
+}
 
 // Helper function to calculate reading time
 function calculateReadingTime(content: any): number {
